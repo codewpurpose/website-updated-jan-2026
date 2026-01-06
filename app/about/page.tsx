@@ -17,7 +17,7 @@ export default function AboutPage() {
       textColor: "text-blue-800",
     },
     {
-      name: "Bruhaat Rao",
+      name: "Bruhatt Rao",
       role: "Co-Founder",
       description: "Dedicated to empowering learners through innovative educational approaches and fostering a community-driven learning environment.",
       initials: "BR",

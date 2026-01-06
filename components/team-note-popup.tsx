@@ -29,7 +29,7 @@ export function TeamNotePopup() {
                     "Every dollar helps us build a more inclusive future where code is a tool for good. Whether it's $5 or $500,
                     you're helping a student start their journey today."
                 </p>
-                <p className="font-medium text-sm">— Shreyan, Samanyu & Bruhaat</p>
+                <p className="font-medium text-sm">— Shreyan, Samanyu & Bruhatt</p>
             </div>
 
             {/* The Toggle Button */}
