@@ -21,7 +21,7 @@ export default function AboutPage() {
     },
     {
       name: "Samanyu Goyal",
-      role: "Chief Financial Officer",
+      role: "Co-Founder",
       img: "/samanyu.jpeg",
       quote: "Every dollar we raise goes to education, not overhead. I make sure of that.",
       linkedin: "https://www.linkedin.com/in/samanyu-goyal/",

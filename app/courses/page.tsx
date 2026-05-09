@@ -94,6 +94,44 @@ const courses = [
     badge: "Lifetime access",
     href: "https://www.udemy.com/course/financial-literacy-the-basics/",
   },
+  {
+    img: "/health-in-tech-udemy.jpg",
+    alt: "Health in Tech: An Introduction",
+    tag: "Health · Tech",
+    tagColor: "bg-[#D6E8E6] text-[#1C2B3A]",
+    title: "Health in Tech: An Introduction",
+    description:
+      "Explore how digital tools are reshaping patient care — from EHRs and wearables to AI, telemedicine, and cybersecurity. No medical or coding degree required.",
+    learn: [
+      "Electronic health records and digital patient data",
+      "Wearables, remote monitoring, and the quantified self",
+      "AI and machine learning in diagnosis and care",
+      "Telemedicine, access, and protecting health data",
+    ],
+    students: "New",
+    badge: "Certificate included",
+    href: "https://www.udemy.com/course/health-iin-tech/?referralCode=22B81FDEAF9000EAC672",
+    imageCover: true,
+  },
+  {
+    img: "/intro-vibe-coding-udemy.jpg",
+    alt: "Intro to Vibe Coding",
+    tag: "Creative · AI-Powered",
+    tagColor: "bg-[#E0D8D0] text-[#1C2B3A]",
+    title: "Intro to Vibe Coding",
+    description:
+      "Level up from Vibecoding 101. Go deeper with MCP servers, databases, auth, UI tooling, and a deployable full-stack project — all with AI-assisted workflows.",
+    learn: [
+      "MCP servers and connecting AI to real tools",
+      "Databases: choosing the right stack for your project",
+      "Authentication and full-stack vibe coding fundamentals",
+      "Ship a real link-in-bio app with dashboard and public profile",
+    ],
+    students: "200+",
+    badge: "Hands-on projects",
+    href: "https://www.udemy.com/course/vibecoding-the-mastery/?referralCode=844D5860F1B3F724BB70",
+    imageCover: true,
+  },
 ]
 
 export default function CoursesPage() {
@@ -108,7 +146,7 @@ export default function CoursesPage() {
           Courses built for the curious
         </h1>
         <p className="text-[#1C2B3A]/60 text-lg leading-relaxed max-w-xl">
-          Five courses, zero cost. Whether you&apos;re starting from scratch or leveling up, there&apos;s a path for you.
+          Seven courses, zero cost. Whether you&apos;re starting from scratch or leveling up, there&apos;s a path for you.
         </p>
       </section>
 
@@ -123,14 +161,30 @@ export default function CoursesPage() {
           >
             <div className="grid md:grid-cols-[260px_1fr] lg:grid-cols-[300px_1fr]">
               {/* Image panel */}
-              <div className="bg-[#EBE5E0] flex items-center justify-center p-10 min-h-[200px]">
-                <Image
-                  src={course.img}
-                  alt={course.alt}
-                  width={200}
-                  height={200}
-                  className="object-contain max-h-40"
-                />
+              <div
+                className={
+                  course.imageCover
+                    ? "relative bg-[#EBE5E0] min-h-[200px] overflow-hidden"
+                    : "bg-[#EBE5E0] flex items-center justify-center p-10 min-h-[200px]"
+                }
+              >
+                {course.imageCover ? (
+                  <Image
+                    src={course.img}
+                    alt={course.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 300px, 260px"
+                  />
+                ) : (
+                  <Image
+                    src={course.img}
+                    alt={course.alt}
+                    width={200}
+                    height={200}
+                    className="object-contain max-h-40"
+                  />
+                )}
               </div>
 
               {/* Content */}

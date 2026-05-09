@@ -200,6 +200,177 @@ export default function ProgramsPage() {
                 </Button>
               </div>
             </div>
+
+            {/* Health in Tech */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+              <div className="h-64 bg-gradient-to-br from-teal-50 to-cyan-50 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/health-in-tech-udemy.jpg"
+                  alt="Health in Tech"
+                  width={750}
+                  height={422}
+                  className="object-cover w-full h-full min-h-64"
+                />
+              </div>
+
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-medium font-light tracking-tight">
+                    Health · Tech
+                  </span>
+                  <div className="flex items-center text-sm text-green-600 font-light tracking-tight">
+                    <Clock className="w-4 h-4 mr-1" />
+                    Self-paced
+                  </div>
+                </div>
+
+                <h2 className="text-3xl font-bold text-green-900 mb-4 font-light tracking-tight">
+                  Health in Tech: An Introduction
+                </h2>
+
+                <p className="text-green-600 mb-6 leading-relaxed font-light tracking-tight">
+                  Understand how technology is transforming healthcare — electronic records, wearables, AI in medicine,
+                  telemedicine, and how we keep patient data safe. Built for curious learners; no coding or clinical
+                  background required.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <h3 className="font-semibold text-green-900 font-light tracking-tight">What you&apos;ll learn:</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        Electronic health records and digital patient data
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        Wearables, remote monitoring, and connected care
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        AI and machine learning in medicine
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        Telemedicine, access, and cybersecurity in health care
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center justify-between mb-6 p-4 bg-green-50 rounded-lg">
+                  <div className="flex items-center">
+                    <Users className="w-5 h-5 text-teal-600 mr-2" />
+                    <span className="text-sm text-green-600 font-light tracking-tight">Growing community</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Award className="w-5 h-5 text-teal-600 mr-2" />
+                    <span className="text-sm text-green-600 font-light tracking-tight">Certificate included</span>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-green-700 hover:bg-green-800 text-white" asChild>
+                  <Link
+                    href="https://www.udemy.com/course/health-iin-tech/?referralCode=22B81FDEAF9000EAC672"
+                    target="_blank"
+                    className="flex items-center justify-center font-light tracking-tight"
+                  >
+                    Enroll Now on Udemy
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Intro to Vibe Coding */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+              <div className="h-64 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/intro-vibe-coding-udemy.jpg"
+                  alt="Intro to Vibe Coding"
+                  width={750}
+                  height={422}
+                  className="object-cover w-full h-full min-h-64"
+                />
+              </div>
+
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium font-light tracking-tight">
+                    Part 2 · AI builds
+                  </span>
+                  <div className="flex items-center text-sm text-green-600 font-light tracking-tight">
+                    <Clock className="w-4 h-4 mr-1" />
+                    Self-paced
+                  </div>
+                </div>
+
+                <h2 className="text-3xl font-bold text-green-900 mb-4 font-light tracking-tight">Intro to Vibe Coding</h2>
+
+                <p className="text-green-600 mb-6 leading-relaxed font-light tracking-tight">
+                  Go beyond the basics: MCP servers, databases, authentication, UI tooling, and full-stack vibe coding.
+                  Build a real link-in-bio app you can deploy and share.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <h3 className="font-semibold text-green-900 font-light tracking-tight">What you&apos;ll learn:</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        MCP servers and AI-connected workflows
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        Databases and choosing the right stack
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        Authentication and full-stack fundamentals
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
+                      <span className="text-green-600 font-light tracking-tight">
+                        UI tools and a deployable portfolio project
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center justify-between mb-6 p-4 bg-green-50 rounded-lg">
+                  <div className="flex items-center">
+                    <Users className="w-5 h-5 text-teal-600 mr-2" />
+                    <span className="text-sm text-green-600 font-light tracking-tight">200+ builders</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Award className="w-5 h-5 text-teal-600 mr-2" />
+                    <span className="text-sm text-green-600 font-light tracking-tight">Hands-on projects</span>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-green-700 hover:bg-green-800 text-white" asChild>
+                  <Link
+                    href="https://www.udemy.com/course/vibecoding-the-mastery/?referralCode=844D5860F1B3F724BB70"
+                    target="_blank"
+                    className="flex items-center justify-center font-light tracking-tight"
+                  >
+                    Enroll Now on Udemy
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
 
           {/* Impact Message */}

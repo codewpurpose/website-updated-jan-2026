@@ -28,6 +28,15 @@ const config: Config = {
         navy: "#1C2B3A",
         "navy-light": "#2D3F52",
         "warm-border": "#E8DDD6",
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          foreground: "hsl(var(--brand-foreground))",
+          hover: "hsl(var(--brand-hover))",
+        },
+        surface: {
+          elevated: "hsl(var(--surface-elevated))",
+          muted: "hsl(var(--surface-muted))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -76,10 +85,15 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(12px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
     },
   },

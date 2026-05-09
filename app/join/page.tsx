@@ -32,6 +32,11 @@ const team = [
     role: "Co-founder",
     img: "/bhim.jpeg",
   },
+  {
+    name: "Samanyu Goyal",
+    role: "Co-founder",
+    img: "/samanyu.jpeg",
+  },
 ]
 
 export default function JoinPage() {
@@ -55,7 +60,7 @@ export default function JoinPage() {
       {/* Who we are */}
       <section className="max-w-6xl mx-auto px-6 lg:px-8 py-14">
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-[#1C2B3A] mb-8">Meet the founders</h2>
-        <div className="grid sm:grid-cols-2 gap-6 mb-16 max-w-xl">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-4xl">
           {team.map((member) => (
             <div key={member.name} className="flex items-center gap-4 bg-white rounded-2xl border border-[#E8DDD6] p-5">
               <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-[#E0D8D0]">

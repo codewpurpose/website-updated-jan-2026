@@ -14,6 +14,61 @@
   animation-play-state: paused;
 }
 
+/* Site intro: code brackets + heart fill (see SiteIntroLoader) */
+@keyframes cwp-intro-bracket-left {
+  from {
+    opacity: 0;
+    transform: translateX(0.35em) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes cwp-intro-bracket-right {
+  from {
+    opacity: 0;
+    transform: translateX(-0.35em) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes cwp-intro-heart-fill {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.cwp-intro-bracket-left {
+  opacity: 0;
+  animation: cwp-intro-bracket-left 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.cwp-intro-bracket-right {
+  opacity: 0;
+  animation: cwp-intro-bracket-right 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 80ms;
+}
+.cwp-intro-heart-fill {
+  clip-path: inset(100% 0 0 0);
+  animation: cwp-intro-heart-fill 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cwp-intro-bracket-left,
+  .cwp-intro-bracket-right,
+  .cwp-intro-heart-fill {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -24,6 +79,12 @@
   .font-sans {
     font-family: var(--font-sans), system-ui, sans-serif;
   }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-navy/45;
+  }
+  .link-focus {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand))]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#FDF4EE] rounded-sm;
+  }
 }
 
 @layer base {
@@ -33,6 +94,13 @@
     --navy-light: #2D3F52;
     --warm-gray: #6B7280;
     --border-light: #E8DDD6;
+
+    /* Single confident accent — warm terracotta (not generic purple/blue gradients) */
+    --brand: 11 58% 44%;
+    --brand-hover: 11 58% 38%;
+    --brand-foreground: 30 55% 98%;
+    --surface-elevated: 28 40% 99%;
+    --surface-muted: 28 28% 94%;
 
     --background: 30 50% 97%;
     --foreground: 210 30% 17%;
@@ -52,7 +120,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 30 20% 88%;
     --input: 30 20% 88%;
-    --ring: 210 30% 17%;
+    --ring: 11 58% 44%;
     --radius: 0.75rem;
   }
 }
@@ -68,9 +136,17 @@
     background-color: #FDF4EE;
     color: #1C2B3A;
     font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif), Georgia, serif;
     font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background-color: hsl(var(--brand) / 0.18);
+    color: #1C2B3A;
   }
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { DM_Serif_Display, DM_Sans } from "next/font/google"
 import "./globals.css"
 
+import { SiteIntroLoader } from "@/components/site-intro-loader"
 import { TeamNotePopup } from "@/components/team-note-popup"
 
 const dmSerif = DM_Serif_Display({
@@ -35,8 +36,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${dmSans.variable}`}>
-      <body className="font-sans antialiased">
+    <html
+      lang="en"
+      className={`${dmSerif.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <SiteIntroLoader />
         {children}
         <TeamNotePopup />
       </body>
