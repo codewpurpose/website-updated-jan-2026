@@ -1,13 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 
-const SESSION_KEY = "cwp-site-intro-seen"
-
-/** Full-viewport intro: `<` `>` bracket in, then heart logo fills. Once per session; respects reduced motion. */
+/** Full-viewport intro: `<` `>` bracket in, then heart fills. Respects reduced motion. */
 export function SiteIntroLoader() {
   const [show, setShow] = useState(false)
   const [exiting, setExiting] = useState(false)
@@ -20,15 +17,7 @@ export function SiteIntroLoader() {
       if (typeof window === "undefined") {
         return () => {}
       }
-      if (window.sessionStorage.getItem(SESSION_KEY)) {
-        return () => {}
-      }
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        try {
-          window.sessionStorage.setItem(SESSION_KEY, "1")
-        } catch {
-          /* ignore */
-        }
         return () => {}
       }
     } catch {
@@ -40,11 +29,6 @@ export function SiteIntroLoader() {
     exitTimer = window.setTimeout(() => setExiting(true), 1250)
     doneTimer = window.setTimeout(() => {
       setShow(false)
-      try {
-        window.sessionStorage.setItem(SESSION_KEY, "1")
-      } catch {
-        /* ignore */
-      }
     }, 1580)
 
     return () => {
@@ -64,43 +48,36 @@ export function SiteIntroLoader() {
       )}
       aria-hidden="true"
     >
-      <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
+      <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
         <span
           className={cn(
-            "font-mono text-[clamp(2rem,8vw,3.25rem)] font-light leading-none text-navy",
+            "font-mono text-[clamp(2.9rem,11vw,5rem)] font-light leading-none text-navy",
             "cwp-intro-bracket-left"
           )}
         >
           &lt;
         </span>
 
-        <div className="relative h-14 w-14 sm:h-16 sm:w-16 shrink-0">
-          <Image
-            src="/codewp-logo.png"
-            alt=""
-            width={64}
-            height={64}
-            className="h-full w-full object-contain opacity-[0.22] saturate-[0.85]"
-            priority
-          />
-          <div
-            className="absolute inset-0 overflow-hidden cwp-intro-heart-fill"
+        <div className="relative flex h-20 w-20 shrink-0 items-center justify-center sm:h-24 sm:w-24 md:h-28 md:w-28">
+          <span
+            className="select-none font-serif text-[clamp(3rem,10vw,5.2rem)] leading-none text-navy/20"
             aria-hidden
           >
-            <Image
-              src="/codewp-logo.png"
-              alt=""
-              width={64}
-              height={64}
-              className="h-full w-full object-contain"
-              priority
-            />
+            ♥
+          </span>
+          <div
+            className="absolute inset-0 flex items-center justify-center overflow-hidden cwp-intro-heart-fill"
+            aria-hidden
+          >
+            <span className="select-none font-serif text-[clamp(3rem,10vw,5.2rem)] leading-none text-navy">
+              ♥
+            </span>
           </div>
         </div>
 
         <span
           className={cn(
-            "font-mono text-[clamp(2rem,8vw,3.25rem)] font-light leading-none text-navy",
+            "font-mono text-[clamp(2.9rem,11vw,5rem)] font-light leading-none text-navy",
             "cwp-intro-bracket-right"
           )}
         >

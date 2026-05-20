@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock, Users, Award } from "lucide-react"
+import { ArrowRight, Award, Clock3, Users } from "lucide-react"
+
 import { Navbar } from "@/components/navbar"
 
 const courses = [
@@ -8,15 +9,15 @@ const courses = [
     img: "/python-course.png",
     alt: "Python for Complete Beginners",
     tag: "Beginner",
-    tagColor: "bg-[#E8DDD6] text-[#1C2B3A]",
+    tint: "from-[#efe2d4] to-[#f7efe8]",
     title: "Python for Complete Beginners",
     description:
-      "Zero experience? Perfect. Go from nothing to building real projects. We break down the fundamentals and get you writing working code fast.",
+      "Zero experience? Start here. Learn the core of Python and get to real projects without wasting time on filler.",
     learn: [
       "Python syntax and fundamentals from scratch",
       "Data structures, loops, and functions",
       "Object-oriented programming concepts",
-      "Building real-world projects and applications",
+      "Building practical beginner projects",
     ],
     students: "600+",
     badge: "Lifetime access",
@@ -25,16 +26,16 @@ const courses = [
   {
     img: "/vibecoding-course.png",
     alt: "Vibecoding 101",
-    tag: "Creative · AI-Powered",
-    tagColor: "bg-[#E0D8D0] text-[#1C2B3A]",
+    tag: "Creative · AI",
+    tint: "from-[#eadbce] to-[#f6efe8]",
     title: "Vibecoding 101",
     description:
-      "Build real apps using AI tools like Cursor and Copilot. Bring your creativity to coding and ship projects that are uniquely yours.",
+      "Build with AI tools like Cursor and Copilot while keeping your own taste, ideas, and product instincts intact.",
     learn: [
       "Creative approaches to problem-solving with code",
       "Modern AI-assisted development workflows",
-      "Building interactive and visually appealing projects",
-      "Expressing your ideas through programming",
+      "Building interactive projects fast",
+      "Turning loose ideas into shippable apps",
     ],
     students: "700+",
     badge: "Portfolio projects",
@@ -44,15 +45,15 @@ const courses = [
     img: "/2.png",
     alt: "Intro to Machine Learning: Concepts",
     tag: "Intermediate",
-    tagColor: "bg-[#DDD6E8] text-[#1C2B3A]",
+    tint: "from-[#e4dfef] to-[#f6f3fb]",
     title: "Intro to Machine Learning: Concepts",
     description:
-      "Demystify machine learning. Understand how algorithms learn from data, explore key concepts like regression, classification, and clustering — no PhD required.",
+      "Understand what machine learning actually is, where it fits, and how the major model categories work in practice.",
     learn: [
-      "Core ML concepts: supervised vs. unsupervised learning",
+      "Supervised vs. unsupervised learning",
       "Regression, classification, and clustering",
       "Model evaluation and validation techniques",
-      "Real-world applications of machine learning",
+      "Real-world applications of ML systems",
     ],
     students: "New",
     badge: "Certificate included",
@@ -62,10 +63,10 @@ const courses = [
     img: "/3.png",
     alt: "Intro to Machine Learning: Projects",
     tag: "Intermediate",
-    tagColor: "bg-[#DDD6E8] text-[#1C2B3A]",
+    tint: "from-[#e2ddf0] to-[#f4f1fb]",
     title: "Intro to Machine Learning: Projects",
     description:
-      "Put theory into practice. Build hands-on ML projects using real datasets — from data preprocessing to model deployment.",
+      "Move from theory into hands-on implementation with real datasets and a full beginner-friendly ML workflow.",
     learn: [
       "End-to-end ML project workflow",
       "Data cleaning and preprocessing",
@@ -80,10 +81,10 @@ const courses = [
     img: "/4.png",
     alt: "Financial Literacy: The Basics",
     tag: "All Levels",
-    tagColor: "bg-[#D6E8D6] text-[#1C2B3A]",
+    tint: "from-[#dfe9dc] to-[#f4f8f2]",
     title: "Financial Literacy: The Basics",
     description:
-      "Money skills nobody teaches in school. Learn budgeting, saving, investing fundamentals, and how to build wealth from any starting point.",
+      "Learn the money fundamentals students are rarely taught clearly: budgeting, credit, saving, investing, and long-term habits.",
     learn: [
       "Budgeting and managing personal finances",
       "Understanding credit, debt, and interest",
@@ -98,15 +99,15 @@ const courses = [
     img: "/health-in-tech-udemy.jpg",
     alt: "Health in Tech: An Introduction",
     tag: "Health · Tech",
-    tagColor: "bg-[#D6E8E6] text-[#1C2B3A]",
+    tint: "from-[#dceae7] to-[#f1f8f7]",
     title: "Health in Tech: An Introduction",
     description:
-      "Explore how digital tools are reshaping patient care — from EHRs and wearables to AI, telemedicine, and cybersecurity. No medical or coding degree required.",
+      "Get a grounded introduction to digital health, from EHRs and telemedicine to AI systems and health data security.",
     learn: [
-      "Electronic health records and digital patient data",
-      "Wearables, remote monitoring, and the quantified self",
-      "AI and machine learning in diagnosis and care",
-      "Telemedicine, access, and protecting health data",
+      "Electronic health records and patient data",
+      "Wearables and remote monitoring",
+      "AI in diagnosis and care delivery",
+      "Telemedicine and protecting health data",
     ],
     students: "New",
     badge: "Certificate included",
@@ -116,149 +117,186 @@ const courses = [
   {
     img: "/intro-vibe-coding-udemy.jpg",
     alt: "Intro to Vibe Coding",
-    tag: "Creative · AI-Powered",
-    tagColor: "bg-[#E0D8D0] text-[#1C2B3A]",
+    tag: "Creative · Advanced AI",
+    tint: "from-[#eadbce] to-[#f7efe7]",
     title: "Intro to Vibe Coding",
     description:
-      "Level up from Vibecoding 101. Go deeper with MCP servers, databases, auth, UI tooling, and a deployable full-stack project — all with AI-assisted workflows.",
+      "Go beyond the intro with MCP, auth, databases, UI tooling, and a deployable full-stack project built with AI-assisted workflows.",
     learn: [
-      "MCP servers and connecting AI to real tools",
-      "Databases: choosing the right stack for your project",
-      "Authentication and full-stack vibe coding fundamentals",
-      "Ship a real link-in-bio app with dashboard and public profile",
+      "MCP servers and real tool integrations",
+      "Choosing the right database for a project",
+      "Authentication and full-stack foundations",
+      "Shipping a complete public-facing app",
     ],
     students: "200+",
     badge: "Hands-on projects",
     href: "https://www.udemy.com/course/vibecoding-the-mastery/?referralCode=844D5860F1B3F724BB70",
     imageCover: true,
   },
-]
+] as const
 
 export default function CoursesPage() {
   return (
-    <div className="min-h-screen bg-[#FDF4EE] font-sans">
+    <div className="relative min-h-screen overflow-hidden text-navy">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute left-[-12rem] top-[16rem] h-[24rem] w-[24rem] rounded-full bg-brand/[0.10] blur-3xl" />
+        <div className="absolute right-[-10rem] top-[32rem] h-[28rem] w-[28rem] rounded-full bg-navy/[0.08] blur-3xl" />
+      </div>
+
       <Navbar />
 
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-10">
-        <p className="italic text-[#1C2B3A]/50 text-sm mb-3">Free · Self-paced · Forever</p>
-        <h1 className="font-serif text-[clamp(2.4rem,5vw,3.8rem)] leading-[1.1] text-[#1C2B3A] mb-4 max-w-2xl">
-          Courses built for the curious
-        </h1>
-        <p className="text-[#1C2B3A]/60 text-lg leading-relaxed max-w-xl">
-          Seven courses, zero cost. Whether you&apos;re starting from scratch or leveling up, there&apos;s a path for you.
-        </p>
-      </section>
+      <main className="pb-24">
+        <section className="section-shell pt-10 pb-14 md:pt-14 md:pb-16">
+          <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+            <div className="max-w-3xl">
+              <span className="section-label">Free · Self-paced · Forever</span>
+              <h1 className="section-title max-w-3xl">
+                Courses designed to get students moving, not just watching.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy/66">
+                Every course is free, globally accessible, and built for practical momentum.
+                Start from zero or sharpen an existing skill without paywalls.
+              </p>
+            </div>
 
-      <div className="border-t border-[#E8DDD6]" />
-
-      {/* Courses list */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-14 space-y-8">
-        {courses.map((course) => (
-          <div
-            key={course.title}
-            className="bg-white rounded-2xl border border-[#E8DDD6] hover:border-[#1C2B3A]/20 transition-colors overflow-hidden"
-          >
-            <div className="grid md:grid-cols-[260px_1fr] lg:grid-cols-[300px_1fr]">
-              {/* Image panel */}
-              <div
-                className={
-                  course.imageCover
-                    ? "relative bg-[#EBE5E0] min-h-[200px] overflow-hidden"
-                    : "bg-[#EBE5E0] flex items-center justify-center p-10 min-h-[200px]"
-                }
-              >
-                {course.imageCover ? (
-                  <Image
-                    src={course.img}
-                    alt={course.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 300px, 260px"
-                  />
-                ) : (
-                  <Image
-                    src={course.img}
-                    alt={course.alt}
-                    width={200}
-                    height={200}
-                    className="object-contain max-h-40"
-                  />
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="p-8 lg:p-10 flex flex-col">
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className={`text-xs font-medium px-3 py-1 rounded-full ${course.tagColor}`}>
-                    {course.tag}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-[#1C2B3A]/50">
-                    <Clock className="w-3 h-3" /> Self-paced
-                  </span>
+            <div className="editorial-card grid gap-4 p-5 sm:grid-cols-3">
+              {[
+                { value: "7", label: "Free courses" },
+                { value: "2,000+", label: "Students learning" },
+                { value: "110+", label: "Countries reached" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-[1.3rem] border border-warm-border/80 bg-white/75 p-5"
+                >
+                  <p className="font-serif text-4xl leading-none text-navy">{item.value}</p>
+                  <p className="mt-3 text-sm leading-snug text-navy/56">{item.label}</p>
                 </div>
-
-                <h2 className="font-serif text-2xl lg:text-3xl text-[#1C2B3A] mb-3">{course.title}</h2>
-                <p className="text-[#1C2B3A]/60 leading-relaxed mb-6">{course.description}</p>
-
-                <div className="mb-6">
-                  <p className="text-xs font-medium text-[#1C2B3A] uppercase tracking-wider mb-3">What you&apos;ll learn</p>
-                  <ul className="grid sm:grid-cols-2 gap-2">
-                    {course.learn.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-[#1C2B3A]/65">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1C2B3A]/40 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-auto flex flex-wrap items-center gap-6">
-                  <div className="flex items-center gap-4 text-sm text-[#1C2B3A]/55">
-                    <span className="flex items-center gap-1.5">
-                      <Users className="w-4 h-4" /> {course.students} students
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Award className="w-4 h-4" /> {course.badge}
-                    </span>
-                  </div>
-                  <Link
-                    href={course.href}
-                    target="_blank"
-                    className="ml-auto flex items-center gap-2 bg-[#1C2B3A] text-[#FDF4EE] text-sm font-medium px-5 py-2.5 rounded-full hover:bg-[#2D3F52] transition-colors"
-                  >
-                    Enroll Free <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-        ))}
-      </section>
+        </section>
 
-      {/* CTA strip */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-20">
-        <div className="rounded-2xl bg-[#1C2B3A] px-8 py-10 flex flex-col md:flex-row md:items-center gap-6">
-          <div>
-            <p className="font-serif text-2xl text-[#FDF4EE] mb-1">All courses are completely free.</p>
-            <p className="text-[#FDF4EE]/55 text-sm">No paywalls. No subscriptions. Just learning.</p>
+        <section className="section-shell pb-16">
+          <div className="space-y-7">
+            {courses.map((course, index) => (
+              <article
+                key={course.title}
+                className="editorial-card overflow-hidden"
+              >
+                <div className="grid lg:grid-cols-[340px_1fr]">
+                  <div className={`relative min-h-[250px] bg-gradient-to-br ${course.tint}`}>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.8),transparent_35%)]" />
+                    {course.imageCover ? (
+                      <Image
+                        src={course.img}
+                        alt={course.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 340px, 100vw"
+                      />
+                    ) : (
+                      <div className="relative flex h-full items-center justify-center p-10">
+                        <Image
+                          src={course.img}
+                          alt={course.alt}
+                          width={220}
+                          height={220}
+                          className="h-auto max-h-[220px] w-auto object-contain drop-shadow-[0_20px_30px_rgba(28,43,58,0.12)]"
+                        />
+                      </div>
+                    )}
+                    <div className="absolute left-5 top-5 rounded-full border border-navy/10 bg-white/78 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-navy/60 backdrop-blur-sm">
+                      {course.tag}
+                    </div>
+                    <div className="absolute bottom-5 left-5 rounded-full bg-navy px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream shadow-[0_12px_24px_-14px_rgba(28,43,58,0.72)]">
+                      0{index + 1}
+                    </div>
+                  </div>
+
+                  <div className="px-6 py-7 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-navy/52">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock3 className="size-4" />
+                        Self-paced
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Users className="size-4" />
+                        {course.students} students
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Award className="size-4" />
+                        {course.badge}
+                      </span>
+                    </div>
+
+                    <h2 className="mt-4 font-serif text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.08] text-navy">
+                      {course.title}
+                    </h2>
+                    <p className="mt-4 max-w-2xl leading-relaxed text-navy/62">
+                      {course.description}
+                    </p>
+
+                    <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                      {course.learn.map((item) => (
+                        <div
+                          key={item}
+                          className="rounded-2xl border border-warm-border/85 bg-white/72 px-4 py-3 text-sm leading-relaxed text-navy/64"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="max-w-md text-sm text-navy/50">
+                        Free forever. Structured enough for beginners, practical enough to
+                        ship something meaningful.
+                      </p>
+                      <Link
+                        href={course.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-navy px-6 text-sm font-semibold text-cream transition-colors hover:bg-navy-light"
+                      >
+                        Enroll free
+                        <ArrowRight className="size-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
-          <Link
-            href="/donate"
-            className="flex-shrink-0 md:ml-auto flex items-center gap-2 bg-[#FDF4EE] text-[#1C2B3A] text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-white transition-colors"
-          >
-            Support Our Mission <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="border-t border-[#E8DDD6]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[#1C2B3A]/35">
-          <p>© {new Date().getFullYear()} CodeWithPurpose · 501(c)(3) nonprofit · Made by students, for students.</p>
-          <Link href="/" className="hover:text-[#1C2B3A]/60 transition-colors">← Back to home</Link>
-        </div>
-      </footer>
+        <section className="section-shell">
+          <div className="relative overflow-hidden rounded-[2rem] bg-navy px-7 py-10 text-cream shadow-[0_40px_120px_-56px_rgba(28,43,58,0.72)] sm:px-10 lg:px-14 lg:py-14">
+            <div className="absolute left-[-4rem] top-[-4rem] h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
+            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/58">
+                  No paywalls
+                </span>
+                <h2 className="mt-5 font-serif text-[clamp(2rem,4vw,3.15rem)] leading-[1.08]">
+                  Learning stays free because the mission is funded, not monetized.
+                </h2>
+                <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream/65">
+                  If you want to keep these courses accessible to the next student, support
+                  the nonprofit behind them.
+                </p>
+              </div>
+              <Link
+                href="/donate"
+                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-cream px-6 text-sm font-semibold text-navy transition-colors hover:bg-white"
+              >
+                Support our mission
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   )
 }

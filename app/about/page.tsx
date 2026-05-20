@@ -1,267 +1,320 @@
-import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Linkedin } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, Linkedin, Sparkles } from "lucide-react"
+
 import { Navbar } from "@/components/navbar"
 
-export default function AboutPage() {
-  const team = [
-    {
-      name: "Shreyan Mitra",
-      role: "Co-Founder",
-      img: "/shreyan.jpg",
-      quote: "Started coding at 14 and realized most kids couldn't access the same resources I had. That didn't sit right with me.",
-      linkedin: "https://www.linkedin.com/in/shreyan-m-8910172b7/",
-    },
-    {
-      name: "Bruhatt Rao",
-      role: "Co-Founder",
-      img: "/bhim.jpeg",
-      quote: "Watched my cousins in India struggle to find quality tech education. Built this so no one else has to.",
-      linkedin: "https://www.linkedin.com/in/bruhatt-rao/",
-    },
-    {
-      name: "Samanyu Goyal",
-      role: "Co-Founder",
-      img: "/samanyu.jpeg",
-      quote: "Every dollar we raise goes to education, not overhead. I make sure of that.",
-      linkedin: "https://www.linkedin.com/in/samanyu-goyal/",
-    },
-    {
-      name: "Naman Jain",
-      role: "Director of Outreach",
-      img: "/naman.png",
-      quote: "Connecting students everywhere with the tools they need to build a better future.",
-      linkedin: "https://www.linkedin.com/in/naman-jain-9276593a5/",
-    },
-    {
-      name: "Prithvi Jai Sudharsan",
-      role: "Director of Media",
-      img: "/prithvi.png",
-      quote: "My goal is to promote financial literacy and technology education to students worldwide.",
-      linkedin: "https://www.linkedin.com/in/prithvi-jai/",
-    },
-  ]
+const team = [
+  {
+    name: "Shreyan Mitra",
+    role: "Co-Founder",
+    img: "/shreyan.jpg",
+    quote:
+      "Started coding at 14 and realized most kids couldn't access the same resources I had. That didn't sit right with me.",
+    linkedin: "https://www.linkedin.com/in/shreyan-m-8910172b7/",
+  },
+  {
+    name: "Bruhatt Rao",
+    role: "Co-Founder",
+    img: "/bhim.jpeg",
+    quote:
+      "Watched my cousins in India struggle to find quality tech education. Built this so no one else has to.",
+    linkedin: "https://www.linkedin.com/in/bruhatt-rao/",
+  },
+  {
+    name: "Samanyu Goyal",
+    role: "Co-Founder",
+    img: "/samanyu.jpeg",
+    quote:
+      "Every dollar we raise goes to education, not overhead. I make sure of that.",
+    linkedin: "https://www.linkedin.com/in/samanyu-goyal/",
+  },
+  {
+    name: "Naman Jain",
+    role: "Director of Outreach",
+    img: "/naman.png",
+    quote:
+      "Connecting students everywhere with the tools they need to build a better future.",
+    linkedin: "https://www.linkedin.com/in/naman-jain-9276593a5/",
+  },
+  {
+    name: "Prithvi Jai Sudharsan",
+    role: "Director of Media",
+    img: "/prithvi.png",
+    quote:
+      "My goal is to promote financial literacy and technology education to students worldwide.",
+    linkedin: "https://www.linkedin.com/in/prithvi-jai/",
+  },
+] as const
 
+const beliefs = [
+  {
+    num: "01",
+    title: "Education is a right",
+    body: "Not a privilege, not a premium product. Access to useful skills should not depend on where a student was born or what their family can afford.",
+  },
+  {
+    num: "02",
+    title: "Students teach differently",
+    body: "We still remember the confusion, the dead ends, and the gaps. That gives our teaching clarity and urgency.",
+  },
+  {
+    num: "03",
+    title: "Reach matters",
+    body: "A course is only meaningful if it gets into the hands of students who actually need it. Scale is part of the mission.",
+  },
+] as const
+
+const timeline = [
+  {
+    title: "The frustration",
+    body: "We kept seeing coding bootcamps priced like college tuition while students everywhere were trying to learn from scattered free videos.",
+  },
+  {
+    title: "The first build",
+    body: "We recorded our first lessons with basic gear, cut out the fluff, and focused on practical explanations that would actually help beginners move.",
+  },
+  {
+    title: "The proof",
+    body: "Students across 110+ countries started enrolling. The mission stopped being an idea and became infrastructure for access.",
+  },
+] as const
+
+export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#FDF4EE] font-sans">
+    <div className="relative min-h-screen overflow-hidden text-navy">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute left-[-12rem] top-[12rem] h-[26rem] w-[26rem] rounded-full bg-brand/[0.10] blur-3xl" />
+        <div className="absolute right-[-10rem] top-[28rem] h-[24rem] w-[24rem] rounded-full bg-navy/[0.08] blur-3xl" />
+      </div>
+
       <Navbar />
 
-      {/* ── HERO ── */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
-        <p className="italic text-[#1C2B3A]/55 text-sm mb-5">Our Story</p>
-        <h1 className="font-serif text-[clamp(2.8rem,6vw,5rem)] leading-[1.1] text-[#1C2B3A] max-w-2xl mb-8">
-          We're just students who got frustrated
-        </h1>
-        <p className="text-[#1C2B3A]/65 text-lg leading-relaxed max-w-2xl">
-          Frustrated that a kid's future could be determined by their parents' bank account.
-          Frustrated that knowledge was locked behind $15,000 paywalls.
-          So we did something about it.
-        </p>
-      </section>
-
-      {/* ── ORIGIN ── */}
-      <section className="border-y border-[#E8DDD6]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="text-[#1C2B3A]/40 text-sm mb-4">— Since 2022</p>
-            <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#1C2B3A] leading-snug mb-6">
-              It started with a simple question
-            </h2>
-            <div className="space-y-4 text-[#1C2B3A]/65 leading-relaxed">
-              <p><em>"Why does learning to code cost so much?"</em></p>
-              <p>
-                We were high school students who'd taught ourselves to code through YouTube and trial and error.
-                We knew not everyone had that luxury — time, guidance, or reliable internet.
-              </p>
-              <p>
-                The bootcamps we saw charged $10,000, $15,000, even $20,000. For what?
-                Knowledge that should be free. Skills that could change someone's life.
-              </p>
-              <p className="text-[#1C2B3A] font-medium">
-                We thought: what if we just taught people for free? What's stopping us?
+      <main className="pb-24">
+        <section className="section-shell pt-10 pb-16 md:pt-14 md:pb-20">
+          <div className="grid items-end gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-3xl">
+              <span className="section-label">Our Story</span>
+              <h1 className="section-title max-w-3xl">
+                We built the kind of learning access we wished already existed.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy/66">
+                CodeWithPurpose started with a simple reaction: it should not cost thousands
+                of dollars to learn skills that can change a student&apos;s future. So we built a
+                student-run nonprofit around free, practical teaching.
               </p>
             </div>
-          </div>
 
-          <div className="space-y-5">
-            {[
-              { icon: "💡", title: "The idea", body: "Create courses. Make them free. Teach anyone who wants to learn." },
-              { icon: "🎥", title: "The first course", body: "Recorded in our bedrooms with basic equipment. But the content? Solid." },
-              { icon: "🌍", title: "The result", body: "2,000+ students from 110+ countries — and we're just getting started." },
-            ].map((item) => (
-              <div key={item.title} className="flex items-start gap-5 p-5 bg-white rounded-2xl border border-[#E8DDD6]">
-                <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                <div>
-                  <p className="font-medium text-[#1C2B3A] mb-1">{item.title}</p>
-                  <p className="text-[#1C2B3A]/60 text-sm leading-relaxed">{item.body}</p>
+            <div className="editorial-card relative overflow-hidden p-5">
+              <div className="grid-overlay absolute inset-0 opacity-40" />
+              <div className="relative grid gap-4 sm:grid-cols-[1.15fr_0.85fr]">
+                <div className="overflow-hidden rounded-[1.35rem]">
+                  <Image
+                    src="/Images/IMG_2785.jpg"
+                    alt="CodeWithPurpose volunteer helping a student"
+                    width={700}
+                    height={900}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="rounded-[1.35rem] bg-navy p-5 text-cream">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/55">
+                      Founded by students
+                    </p>
+                    <p className="mt-3 font-serif text-4xl">2022</p>
+                    <p className="mt-3 text-sm leading-relaxed text-cream/68">
+                      Built to remove cost as a barrier to quality tech education.
+                    </p>
+                  </div>
+                  <div className="rounded-[1.35rem] border border-warm-border/90 bg-white/80 p-5">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy/45">
+                      Focus
+                    </p>
+                    <p className="mt-3 text-base leading-relaxed text-navy/65">
+                      Clear lessons, global access, and practical outcomes instead of
+                      expensive gatekeeping.
+                    </p>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── RECOGNITION ── */}
-      <section className="bg-[#1C2B3A]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-14 lg:py-20 flex flex-col lg:flex-row lg:items-center gap-8">
-          <div className="w-14 h-14 rounded-full bg-[#FDF4EE]/10 flex items-center justify-center flex-shrink-0 text-[#FDF4EE] text-2xl">
-            ★
-          </div>
-          <div>
-            <h2 className="font-serif text-[clamp(1.6rem,3.5vw,2.4rem)] text-[#FDF4EE] leading-snug mb-3">
-              Recognized by the U.S. House of Representatives
-            </h2>
-            <p className="text-[#FDF4EE]/60 leading-relaxed max-w-2xl">
-              Representative <span className="text-[#FDF4EE]/90 font-medium">Mark DeSaulnier</span> honored
-              CodeWithPurpose for our commitment to making free, accessible coding education available to students worldwide.
-              It's not about the award. It's proof that this mission matters.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── BELIEFS ── */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-        <p className="italic text-[#1C2B3A]/55 text-sm mb-2">What drives us</p>
-        <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#1C2B3A] mb-14">
-          This is what we stand for
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-px bg-[#E8DDD6]">
-          {[
-            {
-              num: "01",
-              title: "Education is a right",
-              body: "Not a privilege. Not a commodity. Every person deserves access to knowledge, regardless of where they were born or how much money their parents have.",
-            },
-            {
-              num: "02",
-              title: "Students teaching students",
-              body: "We're not professors in ivory towers. We're students who remember what it's like to learn for the first time. That makes us better teachers.",
-            },
-            {
-              num: "03",
-              title: "No borders for knowledge",
-              body: "A student in Lagos and a student in San Francisco deserve the same opportunities. Geography shouldn't determine destiny.",
-            },
-          ].map((b) => (
-            <div key={b.num} className="bg-[#FDF4EE] p-8 lg:p-10">
-              <p className="text-[#1C2B3A]/25 text-sm font-medium mb-6">{b.num}</p>
-              <h3 className="font-serif text-xl text-[#1C2B3A] mb-3">{b.title}</h3>
-              <p className="text-[#1C2B3A]/60 text-sm leading-relaxed">{b.body}</p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* ── TEAM ── */}
-      <section className="border-t border-[#E8DDD6] bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-          <p className="italic text-[#1C2B3A]/55 text-sm mb-2">The people behind this</p>
-          <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#1C2B3A] mb-14">
-            Real people. Real stories.
-          </h2>
+        <section className="section-shell py-8 md:py-10">
+          <div className="editorial-card overflow-hidden">
+            <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="bg-navy px-6 py-10 text-cream sm:px-8 lg:px-10 lg:py-12">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/60">
+                  <Sparkles className="size-3" />
+                  Why it started
+                </span>
+                <h2 className="mt-5 font-serif text-[clamp(1.9rem,4vw,3rem)] leading-[1.1]">
+                  We saw too many students priced out before they even began.
+                </h2>
+                <div className="mt-6 space-y-4 text-cream/68">
+                  <p>
+                    We taught ourselves through YouTube, experiments, and trial-and-error.
+                    That worked for us, but it also made the gap obvious: many students do not
+                    have the same time, support, or stable access.
+                  </p>
+                  <p>
+                    Meanwhile, bootcamps were charging five figures for skills that should be
+                    broadly available. The mismatch was hard to ignore.
+                  </p>
+                  <p className="text-cream">
+                    The question became practical, not philosophical: if we know how to teach
+                    this, why not teach it for free?
+                  </p>
+                </div>
+              </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {team.map((member) => (
-              <div key={member.name} className="border border-[#E8DDD6] rounded-2xl p-7">
-                <div className="w-16 h-16 rounded-full overflow-hidden mb-5 bg-[#E0D8D0] flex items-center justify-center">
-                  {member.img ? (
-                    <Image src={member.img} alt={member.name} width={64} height={64} className="w-full h-full object-cover" />
-                  ) : (
-                    <span className="text-[#1C2B3A]/50 font-medium text-lg">{member.name.split(" ").map((n: string) => n[0]).join("")}</span>
-                  )}
+              <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(252,244,238,0.98))] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+                <div className="space-y-5">
+                  {timeline.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className="rounded-[1.35rem] border border-warm-border/90 bg-white/85 p-5"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand/70">
+                        0{index + 1}
+                      </p>
+                      <h3 className="mt-3 font-serif text-2xl leading-tight text-navy">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-navy/62">{item.body}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <p className="font-medium text-[#1C2B3A]">{member.name}</p>
-                  <Link href={member.linkedin} target="_blank" className="text-[#1C2B3A]/30 hover:text-[#1C2B3A]/70 transition-colors flex-shrink-0">
-                    <Linkedin className="w-4 h-4" />
-                  </Link>
-                </div>
-                <p className="text-[#1C2B3A]/45 text-xs uppercase tracking-wider mb-4">{member.role}</p>
-                <p className="text-[#1C2B3A]/65 text-sm leading-relaxed italic">
-                  &ldquo;{member.quote}&rdquo;
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell py-16 md:py-20">
+          <div className="mb-10 max-w-2xl">
+            <span className="section-label">What We Stand For</span>
+            <h2 className="font-serif text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] text-navy">
+              Principles that shape every course and decision.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {beliefs.map((belief) => (
+              <article key={belief.num} className="editorial-card p-7 md:p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand/65">
+                  {belief.num}
                 </p>
+                <h3 className="mt-5 font-serif text-[1.65rem] leading-tight text-navy">
+                  {belief.title}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-navy/62">{belief.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="relative py-16 md:py-20">
+          <div className="section-shell">
+            <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <span className="section-label">The Team</span>
+                <h2 className="font-serif text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] text-navy">
+                  The mission is real because the people behind it are.
+                </h2>
+              </div>
+              <p className="max-w-md text-sm leading-relaxed text-navy/56">
+                Students, operators, and builders working on access first.
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
+              {team.map((member) => (
+                <article
+                  key={member.name}
+                  className="editorial-card group overflow-hidden p-5 transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <div className="relative h-64 overflow-hidden rounded-[1.35rem] bg-surface-muted">
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="mt-5 flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="font-serif text-xl leading-tight text-navy">{member.name}</h3>
+                      <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-navy/42">
+                        {member.role}
+                      </p>
+                    </div>
+                    <Link
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-warm-border/90 bg-white text-navy/50 transition-colors hover:text-navy"
+                    >
+                      <Linkedin className="size-4" />
+                    </Link>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-navy/62">
+                    &ldquo;{member.quote}&rdquo;
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell py-8 md:py-10">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { num: "2,000+", label: "Students reached" },
+              { num: "110+", label: "Countries" },
+              { num: "20+", label: "Languages taught" },
+              { num: "8,000+", label: "Minutes of teaching" },
+            ].map((item) => (
+              <div key={item.label} className="editorial-card p-6">
+                <p className="font-serif text-4xl tracking-tight text-navy">{item.num}</p>
+                <p className="mt-2 text-sm text-navy/55">{item.label}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── STATS ── */}
-      <section className="border-y border-[#E8DDD6]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { num: "2,000+", label: "Students" },
-            { num: "110+",   label: "Countries" },
-            { num: "20+",    label: "Languages Taught" },
-            { num: "8,000+", label: "Minutes of Teaching" },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="font-serif text-4xl text-[#1C2B3A]">{s.num}</p>
-              <p className="text-[#1C2B3A]/55 text-sm mt-1">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-        <div className="rounded-3xl bg-[#1C2B3A] px-8 lg:px-16 py-12 lg:py-16 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#FDF4EE] leading-snug max-w-md">
-            Want to be part of something real?
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-            <Link
-              href="/#courses"
-              className="flex items-center justify-center gap-2 bg-[#FDF4EE] text-[#1C2B3A] text-sm font-semibold px-6 py-3 rounded-full hover:bg-white transition-colors"
-            >
-              Start Learning Free
-            </Link>
-            <Link
-              href="/join"
-              className="flex items-center justify-center gap-2 border border-[#FDF4EE]/30 text-[#FDF4EE] text-sm font-medium px-6 py-3 rounded-full hover:border-[#FDF4EE]/60 transition-colors"
-            >
-              Volunteer with Us <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOOTER ── */}
-      <footer className="border-t border-[#E8DDD6]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-4 gap-10">
-            <div className="md:col-span-2">
-              <p className="font-serif text-xl text-[#1C2B3A] mb-2">CodeWithPurpose</p>
-              <p className="text-[#1C2B3A]/55 text-sm leading-relaxed max-w-xs">
-                A student-run nonprofit making tech education free and accessible for everyone, everywhere.
-              </p>
-              <p className="text-[#1C2B3A]/30 text-xs mt-4">Recognized by the U.S. House of Representatives</p>
-            </div>
-            <div>
-              <p className="text-sm font-medium text-[#1C2B3A] mb-4">Learn</p>
-              <ul className="space-y-2.5 text-sm text-[#1C2B3A]/55">
-                <li><Link href="/courses" className="hover:text-[#1C2B3A] transition-colors">All Courses</Link></li>
-                <li><Link href="/#courses" className="hover:text-[#1C2B3A] transition-colors">Free Courses</Link></li>
-                <li><Link href="/about" className="hover:text-[#1C2B3A] transition-colors">Our Story</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-sm font-medium text-[#1C2B3A] mb-4">Get Involved</p>
-              <ul className="space-y-2.5 text-sm text-[#1C2B3A]/55">
-                <li><Link href="/join" className="hover:text-[#1C2B3A] transition-colors">Volunteer</Link></li>
-                <li><Link href="/donate" className="hover:text-[#1C2B3A] transition-colors">Donate</Link></li>
-                <li><Link href="/contact" className="hover:text-[#1C2B3A] transition-colors">Contact Us</Link></li>
-              </ul>
+        <section className="section-shell pt-16">
+          <div className="relative overflow-hidden rounded-[2rem] bg-navy px-7 py-10 text-cream shadow-[0_40px_120px_-56px_rgba(28,43,58,0.72)] sm:px-10 lg:px-14 lg:py-14">
+            <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-brand/20 blur-3xl" />
+            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-xl">
+                <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/58">
+                  Join the mission
+                </span>
+                <h2 className="mt-5 font-serif text-[clamp(2rem,4vw,3.2rem)] leading-[1.08]">
+                  Want to help build free education that actually reaches people?
+                </h2>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/#courses"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-cream px-6 text-sm font-semibold text-navy transition-colors hover:bg-white"
+                >
+                  Start learning free
+                </Link>
+                <Link
+                  href="/join"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 text-sm font-semibold text-cream transition-colors hover:bg-white/8"
+                >
+                  Volunteer with us
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="border-t border-[#E8DDD6] mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[#1C2B3A]/35">
-            <p>© {new Date().getFullYear()} CodeWithPurpose · 501(c)(3) nonprofit · Made by students, for students.</p>
-            <p>Free education for every student, everywhere.</p>
-          </div>
-        </div>
-      </footer>
+        </section>
+      </main>
     </div>
   )
 }

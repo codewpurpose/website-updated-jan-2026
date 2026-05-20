@@ -80,47 +80,72 @@
     font-family: var(--font-sans), system-ui, sans-serif;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-navy/45;
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-navy/42;
   }
   .link-focus {
-    @apply outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand))]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#FDF4EE] rounded-sm;
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand))]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f7f4ef] rounded-sm;
+  }
+  .section-shell {
+    @apply relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-label {
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-navy/50 backdrop-blur-sm;
+    border-color: rgba(15, 23, 42, 0.1);
+    background-color: rgba(255, 255, 255, 0.68);
+  }
+  .section-title {
+    @apply font-serif text-balance text-[clamp(2rem,4.8vw,4.4rem)] leading-[1.02] tracking-[-0.04em] text-navy;
+  }
+  .editorial-card {
+    @apply rounded-[1.75rem] border backdrop-blur-sm shadow-[0_24px_80px_-42px_rgba(15,23,42,0.2)];
+    border-color: rgba(15, 23, 42, 0.08);
+    background-color: rgba(255, 255, 255, 0.76);
+  }
+  .grid-overlay {
+    background-image:
+      linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 36px 36px;
   }
 }
 
 @layer base {
   :root {
-    --cream: #FDF4EE;
-    --navy: #1C2B3A;
-    --navy-light: #2D3F52;
-    --warm-gray: #6B7280;
-    --border-light: #E8DDD6;
+    --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-    /* Single confident accent — warm terracotta (not generic purple/blue gradients) */
-    --brand: 11 58% 44%;
-    --brand-hover: 11 58% 38%;
-    --brand-foreground: 30 55% 98%;
-    --surface-elevated: 28 40% 99%;
-    --surface-muted: 28 28% 94%;
+    --cream: #f7f4ef;
+    --navy: #111827;
+    --navy-light: #1f2937;
+    --warm-gray: #6b7280;
+    --border-light: #e8e1d8;
 
-    --background: 30 50% 97%;
-    --foreground: 210 30% 17%;
+    --brand: 220 22% 12%;
+    --brand-hover: 220 18% 18%;
+    --brand-foreground: 40 30% 97%;
+    --surface-elevated: 35 25% 98%;
+    --surface-muted: 36 17% 94%;
+
+    --background: 35 25% 96%;
+    --foreground: 220 22% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 210 30% 17%;
+    --card-foreground: 220 22% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 30% 17%;
-    --primary: 210 30% 17%;
-    --primary-foreground: 30 50% 97%;
-    --secondary: 30 20% 94%;
-    --secondary-foreground: 210 30% 17%;
-    --muted: 30 20% 94%;
-    --muted-foreground: 210 10% 45%;
-    --accent: 30 20% 94%;
-    --accent-foreground: 210 30% 17%;
+    --popover-foreground: 220 22% 12%;
+    --primary: 220 22% 12%;
+    --primary-foreground: 35 25% 96%;
+    --secondary: 36 18% 93%;
+    --secondary-foreground: 220 22% 12%;
+    --muted: 36 18% 93%;
+    --muted-foreground: 220 10% 42%;
+    --accent: 36 18% 93%;
+    --accent-foreground: 220 22% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 11 58% 44%;
+    --border: 35 15% 86%;
+    --input: 35 15% 86%;
+    --ring: 220 22% 12%;
     --radius: 0.75rem;
   }
 }
@@ -133,20 +158,24 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #FDF4EE;
-    color: #1C2B3A;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(17, 24, 39, 0.045), transparent 22rem),
+      radial-gradient(circle at 85% 8%, rgba(17, 24, 39, 0.06), transparent 20rem),
+      linear-gradient(180deg, #fcfbf8 0%, #f7f4ef 42%, #f2ede6 100%);
+    color: #111827;
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 1.0625rem;
     line-height: 1.6;
     text-rendering: optimizeLegibility;
+    min-height: 100vh;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif), Georgia, serif;
     font-weight: 400;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
   ::selection {
-    background-color: hsl(var(--brand) / 0.18);
-    color: #1C2B3A;
+    background-color: rgba(17, 24, 39, 0.16);
+    color: #111827;
   }
 }
